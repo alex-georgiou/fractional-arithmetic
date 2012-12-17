@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # fractional-arithmetic.js #
 
 A javascript library for doing fractional arithmetic.
@@ -25,45 +24,45 @@ Then, load the library into your code: `var Fraction = require('fractional-arith
 ## API
 
 ### C'tors
-	`Fraction(n,d)` creates the fraction "`n` over `d`" (`n` and `d` must be integers) 
+`Fraction(n,d)` creates the fraction "`n` over `d`" (`n` and `d` must be integers) 
 	
-	`Fraction(f)` creates a new fraction equal to fraction f
+`Fraction(f)` creates a new fraction equal to fraction f
 	
 ### Arithmetic methods
 
-	`.add(f)`, `.plus(f)` both add fraction `f` to this fraction
+`.add(f)`, `.plus(f)` both add fraction `f` to this fraction
 	
-	`.add(n,d)`, `.plus(n,d)` both add "`n` over `d`" to this fraction (`n` and `d` must be integers)
+`.add(n,d)`, `.plus(n,d)` both add "`n` over `d`" to this fraction (`n` and `d` must be integers)
 
-	`.minus(f)` subtracts fraction `f` from this fraction
+`.minus(f)` subtracts fraction `f` from this fraction
 	
-	`.minus(n,d)` subtracts "`n` over `d`" from this fraction (`n` and `d` must be integers)
+`.minus(n,d)` subtracts "`n` over `d`" from this fraction (`n` and `d` must be integers)
 
-	`.times(f)`, `.multiply(f)` both multiply this fraction with fraction `f`
-	
-	`.times(n,d)`, `.multiply(n,d)` both multiply this fraction with fraction "`n` over `d`" (`n` and `d` must be integers)
+`.times(f)`, `.multiply(f)` both multiply this fraction with fraction `f`
 
-	`.dividedBy(f)`, `.div(f)` both divide this fraction with fraction `f`
+`.times(n,d)`, `.multiply(n,d)` both multiply this fraction with fraction "`n` over `d`" (`n` and `d` must be integers)
+
+`.dividedBy(f)`, `.div(f)` both divide this fraction with fraction `f`
 	
-	`.dividedBy(n,d)`, `.div(n,d)` both divide this fraction with fraction "`n` over `d`" (`n` and `d` must be integers)
+`.dividedBy(n,d)`, `.div(n,d)` both divide this fraction with fraction "`n` over `d`" (`n` and `d` must be integers)
 	
-	`.inverse()` returns the inverse of this fraction (flips numerator & denominator)
+`.inverse()` returns the inverse of this fraction (flips numerator & denominator)
 	
 ### Conversion methods
 
-	`.toString()`, `toS()`, `inspect()` return a human-readable string of this fraction
+`.toString()`, `toS()`, `inspect()` return a human-readable string of this fraction
 	
-	`.toLatex()` returns the fraction as a LaTeX command string
+`.toLatex()` returns the fraction as a LaTeX command string
 	
-	`.toMathML()` returns the fraction as a MathML string
+`.toMathML()` returns the fraction as a MathML string
 	
-	`.toNumber()` returns the fraction as a decimal number (divides numerator by denominator)
+`.toNumber()` returns the fraction as a decimal number (divides numerator by denominator)
 	
 ### Helpers
 	
-	`.gcd(a,b)` computes the Greatest Common Divisor of `a` and `b`
+`.gcd(a,b)` computes the Greatest Common Divisor of `a` and `b`
 	
-	`.lcm(a,b)` computes the Least Common Multiple of `a` and `b`
+`.lcm(a,b)` computes the Least Common Multiple of `a` and `b`
 
 ### Exceptions
 
@@ -72,10 +71,3 @@ If an invalid fraction is specified, a `NotAFractionError` is thrown. For exampl
 ## Feedback
 
 Send me an email at <a href="mailto:alex.georgiou@gmail.com">alex.georgiou@gmail.com</a>.
-
-=======
-fractional-arithmetic
-=====================
-
-A javascript library for doing fractional arithmetic.
->>>>>>> bf88e03918d40ab8dc210ff0342d7522926b9656
