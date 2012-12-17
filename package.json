@@ -1,0 +1,28 @@
+{
+  "name": "fractional-arithmetic.js",
+  "version": "1.0.0",
+  "description": "A javascript library for doing fractional arithmetic",
+  "keywords": [
+    "fraction",
+    "fractional",
+    "arithmetic",
+    "numerator",
+    "denominator"
+  ],
+  "repository" : {
+    "type": "git",
+    "url": "https://github.com/"
+  },
+  "main": "fractional-arithmetic",
+  "author": {
+    "name": "Alexandros Georgiou",
+    "email": "alex.georgiou@gmail.com"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "uglifyjs -o ./fractional-arithmetic.min.js ./fractional-arithmetic.js"
+  }
+}
