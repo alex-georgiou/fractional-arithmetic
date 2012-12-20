@@ -4,10 +4,10 @@ A javascript library for doing fractional arithmetic.
 
 ## Install
 
-First do an `npm install fractional-arithmetic`
+First do an `npm install fractional-arithmetic`.
 
-Then, load the library into your code: `var Fraction = require('fractional-arithmetic').Fraction;` . You're good to go.
-
+Then, load the library into your code: `var Fraction = require('fractional-arithmetic').Fraction;`.
+You're good to go.
 
 ## Example usage
 
@@ -28,7 +28,7 @@ Then, load the library into your code: `var Fraction = require('fractional-arith
 	
 `Fraction(f)` creates a new fraction equal to fraction f
 	
-### Arithmetic methods
+### Arithmetic methods (can be chained)
 
 `.add(f)`, `.plus(f)` both add fraction `f` to this fraction
 	
@@ -60,9 +60,9 @@ Then, load the library into your code: `var Fraction = require('fractional-arith
 	
 ### Helpers
 	
-`.gcd(a,b)` computes the Greatest Common Divisor of `a` and `b`
+`Fraction.gcd(a,b)` computes the Greatest Common Divisor of `a` and `b`
 	
-`.lcm(a,b)` computes the Least Common Multiple of `a` and `b`
+`Fraction.lcm(a,b)` computes the Least Common Multiple of `a` and `b`
 
 ### Exceptions
 
