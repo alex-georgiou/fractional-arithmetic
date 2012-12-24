@@ -30,7 +30,9 @@ You're good to go.
 ### C'tors
 `Fraction(n,d)` creates the fraction "`n` over `d`" (`n` and `d` must be integers) 
 	
-`Fraction(f)` creates a new fraction equal to fraction f
+`Fraction(f)` if f is fraction, creates a new fraction equal to fraction f
+
+`Fraction(d)` if f is decimal number, creates a new fraction equal to decimal number d
 	
 ### Arithmetic methods (can be chained)
 
@@ -72,11 +74,11 @@ If you need to use these you need to import them separately, like so:
 	
 `lcm(a,b)` computes the Least Common Multiple of `a` and `b`
 
-`isInteger(n)` true iff n is an integer
+`isInteger(n)` true iff `n` is an integer
 
 ### Exceptions
 
-If an invalid fraction is specified, a `NotAFractionError` is thrown. For example, `Fraction(1.5,3)` will throw an error because the library only supports integer numerators and denominators.
+If an invalid fraction is specified, a `NotAFractionError` is thrown. For example, `Fraction('foobar')` will throw an error.
 
 ## Feedback
 

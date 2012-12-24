@@ -79,7 +79,7 @@ function Fraction(n,d) {
 		return;
 	}
 	
-	throw new NotAFractionError('Cannot instantiate fraction with n='+n+', d='+d);
+	throw new NotAFractionError('Cannot instantiate Fraction(' + n + ( typeof d == 'undefined' ? '' : d ) + ')' );
 }
 
 Fraction.prototype.toString = Fraction.prototype.toS = Fraction.prototype.inspect = function() {
