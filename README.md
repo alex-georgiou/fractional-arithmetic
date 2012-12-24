@@ -13,12 +13,16 @@ You're good to go.
 
 	var f = new Fraction(7,24);
 	var g = Fraction(11,30);
-	console.log('f:',f,'g:',g);
-	console.log('multiplied:',f.times(g));
-	console.log('added:',f.plus(g));
-	console.log('divided:',f.dividedBy(g));
+	console.log('f=',f,'g=',g);
+	console.log('f + g = ',f.plus(g));
+	console.log('f - g = ',f.minus(g));
+	console.log('f x g = ',f.times(g));
+	console.log('f / g = ',f.dividedBy(g));
 	console.log('latex f:',f.toLatex());
 	console.log('number f:',f.toNumber());
+
+	var pi= Fraction(3.1415926);
+	console.log('from decimal pi:',pi,pi.simplify();
 
 
 ## API
@@ -59,10 +63,16 @@ You're good to go.
 `.toNumber()` returns the fraction as a decimal number (divides numerator by denominator)
 	
 ### Helpers
+
+If you need to use these you need to import them separately, like so:
+
+    var gcd = require('fractional-arithmetic').gcd;
+
+`gcd(a,b)` computes the Greatest Common Divisor of `a` and `b`
 	
-`Fraction.gcd(a,b)` computes the Greatest Common Divisor of `a` and `b`
-	
-`Fraction.lcm(a,b)` computes the Least Common Multiple of `a` and `b`
+`lcm(a,b)` computes the Least Common Multiple of `a` and `b`
+
+`isInteger(n)` true iff n is an integer
 
 ### Exceptions
 

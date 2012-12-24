@@ -4,11 +4,13 @@
  * 
  */
 
-function isInteger(i) {
+var isInteger = function(i) {
 	return !isNaN(i) && ( parseInt(i) == parseFloat(i));
-} 
+};
 
-Fraction.gcd = function(a, b) {
+module.exports.isInteger = isInteger;
+
+var gcd = function(a, b) {
 	var temp;
     while (b > 0) {
         temp = b;
@@ -18,10 +20,12 @@ Fraction.gcd = function(a, b) {
     return a;
 };
 
-Fraction.lcm = function(a, b) {
-    return a * (b / Fraction.gcd(a, b));
-};
+module.exports.gcd = gcd;
 
+var lcm = function(a, b) {
+    return a * (b / gcd(a, b));
+};
+module.exports.lcm = lcm;
 
 function NotAFractionError(message) {
     this.name = "NotAFractionError";
@@ -30,9 +34,11 @@ function NotAFractionError(message) {
 
 NotAFractionError.prototype = new Error();
 NotAFractionError.prototype.constructor = NotAFractionError;
- 
 
 function Fraction(n,d) {
+	
+	if (typeof n =='undefined')
+		throw new NotAFractionError('You must specify a fraction');
 	
 	//create without new keyword
 	if ( !(this instanceof Fraction) ) {
@@ -63,6 +69,16 @@ function Fraction(n,d) {
 		return;
 	}
 	
+	
+	if (typeof n == 'number') {
+		var ns = (''+n);
+		var decimals = ns.length - ns.indexOf('.') - 1;
+		this.n = parseInt(ns.replace('.', ''));
+		this.d = Math.pow(10, decimals);
+		
+		return;
+	}
+	
 	throw new NotAFractionError('Cannot instantiate fraction with n='+n+', d='+d);
 }
 
@@ -83,8 +99,8 @@ Fraction.prototype.toMathML = function() {
 };
 
 Fraction.prototype.simplify = function() {
-	var gcd = Fraction.gcd(this.n, this.d);
-	return gcd == 1 ? this : new Fraction(this.n / gcd, this.d / gcd); 
+	var g = gcd(this.n, this.d);
+	return g == 1 ? this : new Fraction(this.n / g, this.d / g); 
 };
 
 Fraction.prototype.inverse = function() {
@@ -118,8 +134,8 @@ Fraction.prototype.dividedBy = Fraction.prototype.div = function(n,d) {
 Fraction.prototype.plus = function(n,d) {
 	
 	if (n instanceof Fraction && typeof d == 'undefined') {
-		var lcm = Fraction.lcm(this.d,n.d);
-		return new Fraction( this.n * lcm / this.d + n.n * lcm / n.d, lcm);
+		var l = lcm(this.d,n.d);
+		return new Fraction( this.n * l / this.d + n.n * l / n.d, l);
 	}
 	
 	else if (isInteger(n) && isInteger(d)) {
@@ -133,8 +149,8 @@ Fraction.prototype.plus = function(n,d) {
 Fraction.prototype.minus = function(n,d) {
 	
 	if (n instanceof Fraction && typeof d == 'undefined') {
-		var lcm = Fraction.lcm(this.d,n.d);
-		return new Fraction( this.n * lcm / this.d - n.n * lcm / n.d, lcm);
+		var l = lcm(this.d,n.d);
+		return new Fraction( this.n * l / this.d - n.n * l / n.d, l);
 	}
 	
 	else if (isInteger(n) && isInteger(d)) {
@@ -145,4 +161,4 @@ Fraction.prototype.minus = function(n,d) {
 	
 };
 
-exports.Fraction = Fraction;
+module.exports.Fraction = Fraction;
