@@ -103,7 +103,7 @@ Fraction.prototype.toMathML = function() {
 };
 
 Fraction.prototype.simplify = function() {
-        if (this.n<0 && this.d<0) {
+        if (this.d<0) {
             this.n *= -1;
             this.d *= -1;
         }
