@@ -11,7 +11,9 @@ var isInteger = function(i) {
 module.exports.isInteger = isInteger;
 
 var gcd = function(a, b) {
-	var temp;
+    a = Math.abs(a);
+    b = Math.abs(b);
+    var temp;
     while (b > 0) {
         temp = b;
         b = a % b;
@@ -23,6 +25,8 @@ var gcd = function(a, b) {
 module.exports.gcd = gcd;
 
 var lcm = function(a, b) {
+    a = Math.abs(a);
+    b = Math.abs(b);
     return a * (b / gcd(a, b));
 };
 module.exports.lcm = lcm;
