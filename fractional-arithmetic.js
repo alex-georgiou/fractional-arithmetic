@@ -11,7 +11,9 @@ var isInteger = function(i) {
 module.exports.isInteger = isInteger;
 
 var gcd = function(a, b) {
-	var temp;
+    a = Math.abs(a);
+    b = Math.abs(b);
+    var temp;
     while (b > 0) {
         temp = b;
         b = a % b;
@@ -23,6 +25,8 @@ var gcd = function(a, b) {
 module.exports.gcd = gcd;
 
 var lcm = function(a, b) {
+    a = Math.abs(a);
+    b = Math.abs(b);
     return a * (b / gcd(a, b));
 };
 module.exports.lcm = lcm;
@@ -99,6 +103,10 @@ Fraction.prototype.toMathML = function() {
 };
 
 Fraction.prototype.simplify = function() {
+        if (this.d<0) {
+            this.n *= -1;
+            this.d *= -1;
+        }
 	var g = gcd(this.n, this.d);
 	return g == 1 ? this : new Fraction(this.n / g, this.d / g); 
 };
