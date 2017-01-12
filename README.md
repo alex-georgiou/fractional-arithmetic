@@ -11,18 +11,18 @@ You're good to go.
 
 ## Example usage
 
-	var f = new Fraction(7,24);
-	var g = Fraction(11,30);
-	console.log('f=',f,'g=',g);
-	console.log('f + g = ',f.plus(g));
-	console.log('f - g = ',f.minus(g));
-	console.log('f x g = ',f.times(g));
-	console.log('f / g = ',f.dividedBy(g));
-	console.log('latex f:',f.toLatex());
-	console.log('number f:',f.toNumber());
+	var f = new Fraction( 7, 24 );
+	var g = Fraction( 11, 30 );
+	console.log( 'f=', f, 'g=', g );
+	console.log( 'f + g = ', f.plus(g) );
+	console.log( 'f - g = ', f.minus(g) );
+	console.log( 'f x g = ', f.times(g) );
+	console.log( 'f / g = ', f.dividedBy(g) );
+	console.log( 'latex f:', f.toLatex() );
+	console.log( 'number f:', f.toNumber() );
 
-	var pi= Fraction(3.1415926);
-	console.log('from decimal pi:',pi,pi.simplify();
+	var pi= Fraction( 3.1415926 );
+	console.log( 'from decimal pi:', pi, pi.simplify() );
 
 
 ## API
@@ -66,7 +66,7 @@ You're good to go.
 	
 ### Helpers
 
-If you need to use these you need to import them separately, like so:
+If you need to use these you can import them separately, like so:
 
     var gcd = require('fractional-arithmetic').gcd;
 
@@ -80,6 +80,22 @@ If you need to use these you need to import them separately, like so:
 
 If an invalid fraction is specified, a `NotAFractionError` is thrown. For example, `Fraction('foobar')` will throw an error.
 
+## Grunt targets
+
+These targets are available
+
+### Run jshint and nodeunit tests
+
+	grunt test
+
+### Build the minified version
+
+	grunt build
+
+### Run tests and build the minified version
+
+	grunt
+
 ## Feedback
 
-Send me an email at <a href="mailto:alex.georgiou@gmail.com">alex.georgiou@gmail.com</a>.
+Send me an email at [alex.georgiou@gmail.com](mailto:alex.georgiou@gmail.com).
