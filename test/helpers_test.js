@@ -8,3 +8,14 @@ exports.gcd_tests = function(test) {
     test.equal( gcd( 54, 24 ), 6, 'gcd of 54 and 24 is 6' );
     test.done();
 };
+
+exports.lcm_tests = function(test) {
+	var lcm = require( '../fractional-arithmetic.js' ).lcm;
+	
+    test.expect( 4 );
+    test.ok( isNaN( lcm( 0, 0 ) ), 'lcm of 0 and 0' );
+    test.equal( lcm( 0, 1 ), 0, 'lcm of 0 and 1' );
+    test.equal( lcm( 4, 6 ), lcm( 6, 4 ), 'lcm is commutative' );
+    test.equal( lcm( 4, 6 ), 12, 'lcm of 4 and 6 is 12' );
+    test.done();
+};
