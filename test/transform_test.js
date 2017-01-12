@@ -13,14 +13,15 @@ exports.fraction_to_formats_tests = function( test ) {
 };
 
 exports.fraction_simpify_tests = function( test ) {
-	test.expect( 4 );
+	test.expect( 6 );
 	var f = Fraction( 7, 3 ).simplify();
 	test.equal( f.n, 7, 'numerator when not simplifiable' );
 	test.equal( f.d, 3, 'denominator when not simplifiable' );
-
 	var g = Fraction( 100, 25 ).simplify();
 	test.equal( g.n, 4, 'numerator when simplifiable' );
 	test.equal( g.d, 1, 'denominator when simplifiable' );
-
+	var h = Fraction( 4, 8 ).simplify();
+	test.equal( h.n, 1, 'numerator when simplifiable' );
+	test.equal( h.d, 2, 'denominator when simplifiable' );
 	test.done();
 };
