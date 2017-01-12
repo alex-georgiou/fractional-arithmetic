@@ -1,4 +1,5 @@
 var Fraction = require( '../fractional-arithmetic.js' ).Fraction;
+var NotAFractionError = require( '../fractional-arithmetic.js' ).NotAFractionError;
 
 exports.fraction_create_tests = function( test ) {
 	test.expect( 2 );
@@ -48,9 +49,23 @@ exports.fraction_create_without_new_tests = function( test ) {
 exports.fraction_create_decimal_tests = function( test ) {
 	test.expect( 2 );
 
-	var f = Fraction( 3.14 );
+	var f = new Fraction( 3.14 );
 	test.equal( f.n, 314, 'numerator from decimal' );
 	test.equal( f.d, 100, 'denominator from decimal' );
+
+	test.done();
+};
+
+exports.fraction_create_error_tests = function( test ) {
+	test.expect( 2 );
+
+	test.throws( function() {
+		var f = new Fraction( 'foobar' );
+	}, NotAFractionError, 'Cannot construct from string' );
+
+	test.throws( function() {
+		var g = new Fraction( );
+	}, NotAFractionError, 'Cannot construct from nothing' );
 
 	test.done();
 };
