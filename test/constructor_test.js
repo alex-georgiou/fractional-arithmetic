@@ -43,3 +43,15 @@ exports.fraction_create_decimal_tests = function( test ) {
 	test.equal( f.d, 100, 'denominator from decimal' );
 	test.done();
 };
+
+exports.fraction_to_formats_tests = function( test ) {
+	test.expect( 6 );
+	var f = new Fraction( 7, 3 );
+	test.equal( f.toString(), '(7/3)', 'toString' );
+	test.equal( f.toS(), '(7/3)', 'toS' );
+	test.equal( f.inspect(), '(7/3)', 'inspect' );
+	test.equal( f.toNumber(), 7/3, 'toNumber' );
+	test.equal( f.toLatex(), '\\frac{7}{3}', 'toLatex' );
+	test.equal( f.toMathML(), '<mfrac><mn>7</mn><mn>3</mfrac>', 'toMathML' );
+	test.done();
+};
