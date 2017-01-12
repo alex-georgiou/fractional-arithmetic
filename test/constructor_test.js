@@ -38,7 +38,7 @@ exports.fraction_create_without_new_tests = function( test ) {
 
 exports.fraction_create_decimal_tests = function( test ) {
 	test.expect( 2 );
-	var f = new Fraction( 3.14 );
+	var f = Fraction( 3.14 );
 	test.equal( f.n, 314, 'numerator from decimal' );
 	test.equal( f.d, 100, 'denominator from decimal' );
 	test.done();
@@ -46,7 +46,7 @@ exports.fraction_create_decimal_tests = function( test ) {
 
 exports.fraction_to_formats_tests = function( test ) {
 	test.expect( 6 );
-	var f = new Fraction( 7, 3 );
+	var f = Fraction( 7, 3 );
 	test.equal( f.toString(), '(7/3)', 'toString' );
 	test.equal( f.toS(), '(7/3)', 'toS' );
 	test.equal( f.inspect(), '(7/3)', 'inspect' );
@@ -57,7 +57,15 @@ exports.fraction_to_formats_tests = function( test ) {
 };
 
 exports.fraction_simpify_tests = function( test ) {
-	test.expect( 0 );
+	test.expect( 4 );
+	var f = Fraction( 7, 3 ).simplify();
+	test.equal( f.n, 7, 'numerator when not simplifiable' );
+	test.equal( f.d, 3, 'denominator when not simplifiable' );
+
+	var g = Fraction( 100, 25 ).simplify();
+	test.equal( g.n, 4, 'numerator when simplifiable' );
+	test.equal( g.d, 1, 'denominator when simplifiable' );
+
 	test.done();
 };
 
