@@ -16,7 +16,8 @@
   "main": "fractional-arithmetic",
   "author": {
     "name": "Alexandros Georgiou",
-    "email": "alex.georgiou@gmail.com"
+    "email": "alex.georgiou@gmail.com",
+    "url": "https://www.alexgeorgiou.gr"
   },
   "engines": {
     "node": "*"
